@@ -1,3 +1,4 @@
 .DS_Store
 lb/.htpassword
 lb/conf.d/*.conf
+u2net/

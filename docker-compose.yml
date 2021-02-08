@@ -9,7 +9,6 @@ services:
     volumes:
       - ./lb/conf.d/:/etc/nginx/conf.d
       - ./lb/.htpassword:/etc/nginx/.htpasswd:ro
-      - ./lb/u2net/:/root/.u2net
     networks:
       private:
         aliases:
@@ -17,6 +16,8 @@ services:
   rembg:
     container_name: rembg
     build: rembg
+    volumes:
+      - ./rembg/u2net/:/root/.u2net
     networks:
       private:
         aliases:

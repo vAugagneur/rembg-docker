@@ -16,7 +16,7 @@ server {
         proxy_read_timeout          600s;
         send_timeout                600s;
         satisfy any;
-        # # allow 82.252.137.173; # eg. to allow an ip
+        # allow XX.XXX.XXX.XXX; # eg. to allow an ip
         deny all;
 
         auth_basic           "Administrator’s Area";
