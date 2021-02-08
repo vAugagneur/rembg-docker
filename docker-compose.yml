@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  lb:
+    container_name: lb
+    image: nginx
+    ports:
+      - 8080:80
+      # - 443:443
+    volumes:
+      - ./lb/conf.d/:/etc/nginx/conf.d
+      - ./lb/.htpassword:/etc/nginx/.htpasswd:ro
+      - ./lb/u2net/:/root/.u2net
+    networks:
+      private:
+        aliases:
+          - lb
+  rembg:
+    container_name: rembg
+    build: rembg
+    networks:
+      private:
+        aliases:
+          - rembg
+
+networks:
+  private:
+    driver: bridge
